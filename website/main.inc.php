@@ -7,7 +7,7 @@ dg224@njit.edu
 */
 if (!isset($_SESSION['login'])) {
 ?>
-  <h2>Please Login to the Outdoor Gear Shop Inventory Website</h2><br>
+  <h2>Please Login to the Outdoor Clothing Shop Inventory Website</h2><br>
   <form name="login" action="index.php" method="post">
     <label>Email:</label>
     <input type="text" name="emailAddress" size="20">
@@ -23,7 +23,7 @@ if (!isset($_SESSION['login'])) {
 
 <?php
 } else {
-   echo "<h2>Welcome {$_SESSION['login']}({$_SESSION['pronouns']}) to Outdoor Gear Shop Inventory Helper</h2>";
+   echo "<h2>Welcome {$_SESSION['login']}({$_SESSION['pronouns']}) to Outdoor Clothing Shop Inventory Helper</h2>";
 ?>
    <br><br>
    <p>This program tracks category and item inventory</p>

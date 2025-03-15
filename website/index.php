@@ -9,7 +9,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Outdoor Gear Shop Inventory Helper</title></head>
+<head><title>Outdoor Clothing Shop Inventory Helper</title></head>
 <body>
    <section id="container">
        <main>

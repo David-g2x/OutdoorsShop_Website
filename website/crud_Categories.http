@@ -1,0 +1,108 @@
+### Create a New Category (1st category)
+POST http://localhost:3000/addOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=1
+&CategoryCode=WJ
+&CategoryName=Waterproof Jacket
+&AisleNumber=1
+
+###2nd category
+POST http://localhost:3000/addOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=2
+&CategoryCode=HBS
+&CategoryName=Hiking Boots
+&AisleNumber=2
+
+###3rd category
+POST http://localhost:3000/addOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=3
+&CategoryCode=UVPH
+&CategoryName=UV Protection Hat
+&AisleNumber=3
+
+###4th category
+POST http://localhost:3000/addOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=4
+&CategoryCode=IGS
+&CategoryName=Insulated Gloves
+&AisleNumber=4
+
+###5th category
+POST http://localhost:3000/addOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=5
+&CategoryCode=FHD
+&CategoryName=Fleece-lined Hoodie
+&AisleNumber=5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###SCREENSHOT CASES BELOW:
+###
+
+### Get List of All Categories (WORKS)
+GET http://localhost:3000/listOutdoorcategories.test.php
+
+###
+
+### Update an Existing Category (WORKS)
+POST http://localhost:3000/changeOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=1
+&CategoryCode=RAND
+&CategoryName=RandomTEST
+&AisleNumber=1
+###
+
+### Remove a Category (WORKS)
+POST http://localhost:3000/removeOutdoorcategory.test.php
+Content-Type: application/x-www-form-urlencoded
+
+CategoryID=1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Setting to 6 so it dont delete none of the categories I care about
+### ANYTHING ABOVE DEALS WITH CATEGORIES

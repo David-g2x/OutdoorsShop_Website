@@ -22,14 +22,14 @@ $stmt->close(); // Close the statement after fetching
 $name = "$firstName $lastName";
 
 if ($fetched) {
-   echo "<h2>Welcome $name$pronouns to Outdoor Gear Shop Inventory Helper</h2>\n";
+   echo "<h2>Welcome $name$pronouns to Outdoor Clothing Shop Inventory Helper</h2>\n";
    session_start();
    $_SESSION['login'] = $name;
    $_SESSION['pronouns'] = $pronouns;
    header("Location: index.php");
    exit();
 } else {
-   echo "<h2>Sorry Outdoor Gear Shop, login incorrect</h2>\n";
+   echo "<h2>Sorry Outdoor Clothing Shop, login incorrect</h2>\n";
    echo "<a href=\"index.php\">Please try again</a>\n";
 }
 ?>

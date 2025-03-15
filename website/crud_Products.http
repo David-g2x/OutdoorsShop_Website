@@ -1,0 +1,302 @@
+### (W.J. PRODUCT 1)
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=WJ101
+&ProductName=Nike Storm-FIT Jacket
+&ProductDescription=Created with water and wind-resistant technology. Has reflective details and has a loose fit to it.
+&Model=Storm-FIT
+&Size=XL
+&Color=Black
+&CategoryID=1
+&WholesalePrice=90.00
+&ListPrice=150.00
+
+
+### (W.J. PRODUCT 2)
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=WJ102
+&ProductName=Adidas Terrex Multi 2L RAIN.RDY Jacket
+&ProductDescription=Waterproof and windproof outdoor jacket with Adidas RAIN.RDY technology. It is designed for all-weather.
+&Model=Terrex Multi 2L RAIN.RDY
+&Size=L
+&Color=Magic Grey
+&CategoryID=1
+&WholesalePrice=70.00
+&ListPrice=100.00
+
+
+### (W.J. PRODUCT 3)
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=WJ103
+&ProductName=The North Face Apex Bionic 3 Hoodie
+&ProductDescription=Premium waterproof jacket with groundbreaking breathable technology. It is perfect for all-weather outdoor.
+&Model=Apex Bionic 3
+&Size=L
+&Color=TNF Black
+&CategoryID=1
+&WholesalePrice=200.00
+&ListPrice=350.00
+###
+
+###(HBS 1)
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=HBS201
+&ProductName=Timberland Mt. Maddsen Mid Waterproof Hiking Boots
+&ProductDescription= Has waterproof protection for the hikes. AS well as anti-fatigue technology for long-distance hikes.
+&Model=Mt. Maddsen Mid WP
+&Size=10
+&Color=Black
+&CategoryID=2
+&WholesalePrice=50.00
+&ListPrice=99.99
+
+###(HBS 2)
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=HBS202
+&ProductName=The North Face VECTIV Exploris Mid FUTURELIGHT Hiking Boots
+&ProductDescription=High-performance hiking boots with FUTURELIGHT waterproofing. As well as has a VECTIV midsole to maximize stability and grip.
+&Model=VECTIV Exploris Mid FUTURELIGHT
+&Size=11
+&Color=Black/Asphalt Grey
+&CategoryID=2
+&WholesalePrice=150.00
+&ListPrice=220.00
+
+###HBS 3
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=HBS203
+&ProductName=Adidas Terrex Free Hiker GORE-TEX Hiking Boots
+&ProductDescription=Lightweight and waterproof hiking boots. Has Boost cushioning and Continental rubber outsole to optimize traction.
+&Model=Terrex Free Hiker GTX
+&Size=9
+&Color=Blue/Black
+&CategoryID=2
+&WholesalePrice=170.00
+&ListPrice=250.00
+###
+
+###UVPH 1
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=UVPH301
+&ProductName=Columbia Bora Bora II Booney Hat
+&ProductDescription=Breathable, lightweight, and moisture-wicking booney hat. Provides the user with UPF 50+ sun protection.
+&Model=Bora Bora II Booney
+&Size=One Size Fits All
+&Color=Fossil
+&CategoryID=3
+&WholesalePrice=20.00
+&ListPrice=40.00
+
+###UVPH2
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=UVPH302
+&ProductName=The North Face Horizon Breeze Brimmer Hat
+&ProductDescription=A durable sun hat with wide brim. Provides UPF 50 protection.
+&Model=Horizon Breeze Brimmer
+&Size=M/L
+&Color=Grey
+&CategoryID=3
+&WholesalePrice=30.00
+&ListPrice=55.00
+
+###UVPH3
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=UVPH303
+&ProductName=Adidas Superlite UPF Performance Cap
+&ProductDescription=It's a lightweight performance cap. Has up to UPF 50 sun protection.
+&Model=Superlite UPF Performance Cap
+&Size=Adjustable
+&Color=Black
+&CategoryID=3
+&WholesalePrice=15.00
+&ListPrice=30.00
+
+###IGS1
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=IGS401
+&ProductName=The North Face Montana Ski Gloves
+&ProductDescription=Waterproof and insulated ski gloves. Equipped with DryVent technology for maximum warmth.
+&Model=Montana Ski Gloves
+&Size=L
+&Color=Black
+&CategoryID=4
+&WholesalePrice=45.00
+&ListPrice=65.00
+
+###IGS2
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=IGS402
+&ProductName=Columbia Inferno Range Gloves
+&ProductDescription=Thermal-reflective insulated gloves. Has a waterproof shell for extreme cold weather.
+&Model=Inferno Range
+&Size=M
+&Color=Grey
+&CategoryID=4
+&WholesalePrice=40.00
+&ListPrice=85.00
+
+###IGS3
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=IGS403
+&ProductName=Adidas Climaproof Insulated Gloves
+&ProductDescription= Are lightweight insulated gloves with waterproof technology. Provides the user with superior comfort.
+&Model=Climaproof Insulated Gloves
+&Size=XL
+&Color=Navy Blue
+&CategoryID=4
+&WholesalePrice=8.00
+&ListPrice=25.00
+
+###FHD1
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=FHD501
+&ProductName=The North Face Gordon Lyons Fleece Hoodie
+&ProductDescription=A premium fleece-lined hoodie. It is perfect for cold-weather adventures.
+&Model=Gordon Lyons Fleece Hoodie
+&Size=L
+&Color=Black Heather
+&CategoryID=5
+&WholesalePrice=55.00
+&ListPrice=84.00
+
+###FHD2
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=FHD502
+&ProductName=Columbia Hart Mountain II Fleece Hoodie
+&ProductDescription=Soft cotton-blend hoodie with fleece lining. Perfect for the outdoors or for casual wear.
+&Model=Hart Mountain II Fleece Hoodie
+&Size=M
+&Color=River Blue
+&CategoryID=5
+&WholesalePrice=25.00
+&ListPrice=55.00
+
+###FHD3
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=FHD503
+&ProductName=Adidas Essentials Fleece-Lined Hoodie
+&ProductDescription=A classic Adidas hoodie with fleece lining. Is designed to provide user with added warmth.
+&Model=Essentials Fleece-Lined Hoodie
+&Size=XS
+&Color=Black
+&CategoryID=5
+&WholesalePrice=45.00
+&ListPrice=60.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###SCREENSHOT CASES BELOW:
+### Create a New Product (#2)
+POST http://localhost:3000/addOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductCode=WJ102
+&ProductName=Product 2
+&ProductDescription=RANDOM
+&Model=HELLO
+&Size=IDK
+&Color=IDK
+&CategoryID=2
+&WholesalePrice=0.00
+&ListPrice=0.00
+
+###
+
+### Get List of All Products(WORKSSSS)
+GET http://localhost:3000/listOutdoorproduct.test.php
+
+###
+
+### Update an Existing Product(WORKSSSSSS)
+POST http://localhost:3000/changeOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductID=4
+&ProductCode=TEST
+&ProductName=TEST
+&ProductDescription=TEST
+&Model=TESR
+&Size=TEST
+&Color=TEST
+&CategoryID=3
+&WholesalePrice=0.00
+&ListPrice=0.00
+
+###
+
+
+
+### Remove a Product(WORKSSSS)
+POST http://localhost:3000/removeOutdoorproduct.test.php
+Content-Type: application/x-www-form-urlencoded
+
+ProductID=1 
+###
