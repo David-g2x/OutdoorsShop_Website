@@ -23,7 +23,7 @@ if (!isset($_SESSION['login'])) {
 
 <?php
 } else {
-   echo "<h2>Welcome {$_SESSION['login']}({$_SESSION['pronouns']}) to Outdoor Clothing Shop Inventory Helper</h2>";
+   echo "<h2>Welcome {$_SESSION['login']}({$_SESSION['pronouns']}) to Outdoor Clothing Shop Product Helper</h2>";
 ?>
    <br><br>
    <p>This program tracks category and item inventory</p>

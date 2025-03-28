@@ -17,7 +17,7 @@ $stmt->bind_param("ss", $emailAddress, $password);
 $stmt->execute();
 $stmt->bind_result($firstName, $lastName, $pronouns);
 $fetched = $stmt->fetch();
-$stmt->close(); // Close the statement after fetching
+$stmt->close(); 
 
 $name = "$firstName $lastName";
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Mar 15, 2025 at 11:44 PM
+-- Generation Time: Mar 28, 2025 at 10:33 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -27,25 +27,25 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `OutdoorClothingProducts` (
-`ProductID` int(11) NOT NULL,
-  `ProductCode` varchar(10) NOT NULL,
+  `ProductID` int(11) NOT NULL,
+  `ProductCode` varchar(50) DEFAULT NULL,
   `ProductName` varchar(255) NOT NULL,
   `ProductDescription` text NOT NULL,
   `Model` varchar(50) NOT NULL,
-  `Size` varchar(20) NOT NULL,
+  `Size` varchar(50) DEFAULT NULL,
   `Color` varchar(50) NOT NULL,
   `CategoryID` int(11) NOT NULL,
   `WholesalePrice` decimal(10,2) NOT NULL,
   `ListPrice` decimal(10,2) NOT NULL,
   `DateCreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `OutdoorClothingProducts`
 --
 
 INSERT INTO `OutdoorClothingProducts` (`ProductID`, `ProductCode`, `ProductName`, `ProductDescription`, `Model`, `Size`, `Color`, `CategoryID`, `WholesalePrice`, `ListPrice`, `DateCreated`) VALUES
-(1, 'WJ101', 'Nike Storm-FIT Jacket', 'Created with water and wind-resistant technology. Has reflective details and has a loose fit to it.', 'Storm-FIT', 'XL', 'Black', 1, 90.00, 150.00, '2025-03-15 19:01:29'),
+(1, 'WJ101', 'Nike Storm-FIT Jacket', 'Created with water and wind-resistant technology. Has reflective details and has a loose fit to it.', 'Storm-FIT', 'XL', 'Black', 1, 90.00, 150.00, '2025-03-28 10:10:57'),
 (2, 'WJ102', 'Adidas Terrex Multi 2L RAIN.RDY Jacket', 'Waterproof and windproof outdoor jacket with Adidas RAIN.RDY technology. It is designed for all-weather.', 'Terrex Multi 2L RAIN.RDY', 'L', 'Magic Grey', 1, 70.00, 100.00, '2025-03-15 19:01:32'),
 (3, 'WJ103', 'The North Face Apex Bionic 3 Hoodie', 'Premium waterproof jacket with groundbreaking breathable technology. It is perfect for all-weather outdoor.', 'Apex Bionic 3', 'L', 'TNF Black', 1, 200.00, 350.00, '2025-03-15 19:01:47'),
 (4, 'HBS201', 'Timberland Mt. Maddsen Mid Waterproof Hiking Boots', 'Has waterproof protection for the hikes. AS well as anti-fatigue technology for long-distance hikes.', 'Mt. Maddsen Mid WP', '10', 'Black', 2, 50.00, 99.99, '2025-03-15 19:12:00'),
@@ -59,7 +59,8 @@ INSERT INTO `OutdoorClothingProducts` (`ProductID`, `ProductCode`, `ProductName`
 (12, 'IGS403', 'Adidas Climaproof Insulated Gloves', 'Are lightweight insulated gloves with waterproof technology. Provides the user with superior comfort.', 'Climaproof Insulated Gloves', 'XL', 'Navy Blue', 4, 8.00, 25.00, '2025-03-15 19:26:44'),
 (13, 'FHD501', 'The North Face Gordon Lyons Fleece Hoodie', 'A premium fleece-lined hoodie. It is perfect for cold-weather adventures.', 'Gordon Lyons Fleece Hoodie', 'L', 'Black Heather', 5, 55.00, 84.00, '2025-03-15 19:37:15'),
 (14, 'FHD502', 'Columbia Hart Mountain II Fleece Hoodie', 'Soft cotton-blend hoodie with fleece lining. Perfect for the outdoors or for casual wear.', 'Hart Mountain II Fleece Hoodie', 'M', 'River Blue', 5, 25.00, 55.00, '2025-03-15 19:37:17'),
-(15, 'FHD503', 'Adidas Essentials Fleece-Lined Hoodie', 'A classic Adidas hoodie with fleece lining. Is designed to provide user with added warmth.', 'Essentials Fleece-Lined Hoodie', 'XS', 'Black', 5, 45.00, 60.00, '2025-03-15 19:37:20');
+(15, 'FHD503', 'Adidas Essentials Fleece-Lined Hoodie', 'A classic Adidas hoodie with fleece lining. Is designed to provide user with added warmth.', 'Essentials Fleece-Lined Hoodie', 'XS', 'Black', 5, 45.00, 60.00, '2025-03-15 19:37:20'),
+(16, 'BN101', 'Supreme Timberland Beanie', 'A collaboration with supreme and Timberland. Part of the Fall/Winter 2021 Collection.', 'FW21', 'Fits All', 'Blue', 6, 45.00, 79.00, '2025-03-28 14:40:48');
 
 --
 -- Indexes for dumped tables
@@ -71,15 +72,6 @@ INSERT INTO `OutdoorClothingProducts` (`ProductID`, `ProductCode`, `ProductName`
 ALTER TABLE `OutdoorClothingProducts`
  ADD PRIMARY KEY (`ProductID`), ADD UNIQUE KEY `ProductCode` (`ProductCode`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `OutdoorClothingProducts`
---
-ALTER TABLE `OutdoorClothingProducts`
-MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

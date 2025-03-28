@@ -8,7 +8,7 @@
         IT-202-002 Phase 2 Assignment: CRUD Categories and Products
         dg224@njit.edu
         */
-       include("OutdoorClothingProduct.php");
+       //include("OutdoorClothingProduct.php");
        $products = OutdoorClothingProduct::getProducts();
        foreach ($products as $product) {
            $ProductID = $product->ProductID;

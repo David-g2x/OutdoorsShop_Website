@@ -5,6 +5,7 @@ David Guemes Giles
 IT-202-002 Phase 2 Assignment: CRUD Categories and Products
 dg224@njit.edu
 */
+
 require_once('database.php');
 
 class OutdoorClothingCategory
@@ -17,7 +18,7 @@ class OutdoorClothingCategory
 
     function __construct($CategoryID, $CategoryCode, $CategoryName, $AisleNumber, $DateCreated = null)
     {
-        if (empty($CategoryCode) || empty($CategoryName) || !is_numeric($AisleNumber)) {
+        if (empty($CategoryID) || !is_numeric($CategoryID) || empty($CategoryCode) || empty($CategoryName) || !is_numeric($AisleNumber)) {
             throw new Exception("Invalid inputs for creating an OutdoorClothingCategory object.");
         }
 
@@ -27,6 +28,7 @@ class OutdoorClothingCategory
         $this->AisleNumber = $AisleNumber;
         $this->DateCreated = $DateCreated ?? date('Y-m-d H:i:s');
     }
+
 
     function __toString()
     {
@@ -38,23 +40,30 @@ class OutdoorClothingCategory
     {
         $db = getDB();
         if (!$db) {
-            die("Error: Database connection failed.");
+            throw new Exception("Error: Database connection failed.");
         }
 
-        $query = "INSERT INTO OutdoorClothingCategories (CategoryCode, CategoryName, AisleNumber, DateCreated) 
-                  VALUES (?, ?, ?, NOW())";
+        
+        if (empty($this->CategoryID) || !is_numeric($this->CategoryID)) {
+            throw new Exception("CategoryID must be provided and valid.");
+        }
+
+        $query = "INSERT INTO OutdoorClothingCategories 
+                (CategoryID, CategoryCode, CategoryName, AisleNumber, DateCreated) 
+                VALUES (?, ?, ?, ?, ?)";
         $stmt = $db->prepare($query);
         if (!$stmt) {
-            die("Error preparing statement: " . $db->error);
+            throw new Exception("Error preparing statement: " . $db->error);
         }
 
-        $stmt->bind_param("ssi", $this->CategoryCode, $this->CategoryName, $this->AisleNumber);
+        $this->DateCreated = $this->DateCreated ?? date('Y-m-d H:i:s');
+        $stmt->bind_param("issis", $this->CategoryID, $this->CategoryCode, $this->CategoryName, $this->AisleNumber, $this->DateCreated);
 
         if (!$stmt->execute()) {
-            echo "Error executing query: " . $stmt->error;
+            $error = $stmt->error;
             $stmt->close();
             $db->close();
-            return false;
+            throw new Exception("Error executing query: $error");
         }
 
         $stmt->close();
@@ -62,23 +71,23 @@ class OutdoorClothingCategory
         return true;
     }
 
+
     static function getCategories()
     {
         $db = getDB();
         if (!$db) {
-            die("Error: Database connection failed.");
+            throw new Exception("Error: Database connection failed.");
         }
 
         $query = "SELECT * FROM OutdoorClothingCategories";
         $result = $db->query($query);
 
         if (!$result) {
-            echo "Error executing query: " . $db->error;
             $db->close();
-            return NULL;
+            throw new Exception("Error executing query: " . $db->error);
         }
 
-        $categories = array();
+        $categories = [];
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             $categories[] = new OutdoorClothingCategory(
                 $row['CategoryID'],
@@ -97,13 +106,13 @@ class OutdoorClothingCategory
     {
         $db = getDB();
         if (!$db) {
-            die("Error: Database connection failed.");
+            throw new Exception("Error: Database connection failed.");
         }
 
         $query = "SELECT * FROM OutdoorClothingCategories WHERE CategoryID = ?";
         $stmt = $db->prepare($query);
         if (!$stmt) {
-            die("Error preparing statement: " . $db->error);
+            throw new Exception("Error preparing statement: " . $db->error);
         }
 
         $stmt->bind_param("i", $CategoryID);
@@ -123,7 +132,7 @@ class OutdoorClothingCategory
                 $row['DateCreated']
             );
         } else {
-            return NULL;
+            return null;
         }
     }
 
@@ -131,23 +140,23 @@ class OutdoorClothingCategory
     {
         $db = getDB();
         if (!$db) {
-            die("Error: Database connection failed.");
+            throw new Exception("Error: Database connection failed.");
         }
 
         $query = "UPDATE OutdoorClothingCategories SET CategoryCode = ?, 
                   CategoryName = ?, AisleNumber = ? WHERE CategoryID = ?";
         $stmt = $db->prepare($query);
         if (!$stmt) {
-            die("Error preparing statement: " . $db->error);
+            throw new Exception("Error preparing statement: " . $db->error);
         }
 
         $stmt->bind_param("ssii", $this->CategoryCode, $this->CategoryName, $this->AisleNumber, $this->CategoryID);
 
         if (!$stmt->execute()) {
-            echo "Error executing query: " . $stmt->error;
+            $error = $stmt->error;
             $stmt->close();
             $db->close();
-            return false;
+            throw new Exception("Error executing query: $error");
         }
 
         $stmt->close();
@@ -159,22 +168,22 @@ class OutdoorClothingCategory
     {
         $db = getDB();
         if (!$db) {
-            die("Error: Database connection failed.");
+            throw new Exception("Error: Database connection failed.");
         }
 
         $query = "DELETE FROM OutdoorClothingCategories WHERE CategoryID = ?";
         $stmt = $db->prepare($query);
         if (!$stmt) {
-            die("Error preparing statement: " . $db->error);
+            throw new Exception("Error preparing statement: " . $db->error);
         }
 
         $stmt->bind_param("i", $this->CategoryID);
 
         if (!$stmt->execute()) {
-            echo "Error executing query: " . $stmt->error;
+            $error = $stmt->error;
             $stmt->close();
             $db->close();
-            return false;
+            throw new Exception("Error executing query: $error");
         }
 
         $stmt->close();
