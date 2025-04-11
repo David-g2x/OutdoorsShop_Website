@@ -12,7 +12,7 @@
         //require_once("OutdoorClothingCategory.php");
         
         $categories = OutdoorClothingCategory::getCategories();
-        if ($categories) {
+        //if ($categories) {
             foreach ($categories as $category) {
                 $categoryID = $category->CategoryID; 
                 $categoryCode = $category->CategoryCode;
@@ -21,7 +21,7 @@
                 $displayText = "$categoryID - $categoryCode, $categoryName";
                 echo "<option value=\"$categoryID\">$displayText</option>\n";
             }
-        }
+        //}
         ?>
     </select>
 </form>
