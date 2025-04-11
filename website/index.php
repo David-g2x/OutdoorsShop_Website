@@ -6,7 +6,7 @@ IT-202-002 Phase 1 Assignment: Login and Logout
 dg224@njit.edu
 */
 session_start();
-include("OutdoorClothingcategory.php");
+include("OutdoorClothingCategory.php");
 include("OutdoorClothingProduct.php");
 
 ?>
