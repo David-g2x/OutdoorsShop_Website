@@ -11,62 +11,63 @@ if (!isset($_POST['ProductID']) || !is_numeric($_POST['ProductID'])) {
     <a href="index.php?content=listOutdoorproduct">List items</a>
     <?php
 } else {
-    $ProductID = $_POST['ProductID'];
+    $ProductID = htmlspecialchars($_POST['ProductID']);
     $item = OutdoorClothingProduct::findProduct($ProductID);
     if ($item) {
         ?>
-        <h2>Update Item <?php echo $item->ProductID; ?></h2><br>
+        <h2>Update Item <?php echo htmlspecialchars($item->ProductID); ?></h2><br>
         <form name="products" action="index.php" method="post">
     <table>
         <tr>
-            <td>Product ID</td>
-            <td><?php echo $item->ProductID; ?></td>
+            <td>Product ID:</td>
+            <td><?php echo htmlspecialchars($item->ProductID); ?></td>
         </tr>
         <tr>
-            <td>Product Code</td>
-            <td><input type="text" name="ProductCode" value="<?php echo $item->ProductCode; ?>" required></td>
+            <td>Product Code:</td>
+            <td><input type="text" name="ProductCode" value="<?php echo htmlspecialchars($item->ProductCode); ?>" size="10" placeholder="XXX" minlength="3" maxlength="10" required></td>
         </tr>
         <tr>
-            <td>Name</td>
-            <td><input type="text" name="ProductName" value="<?php echo $item->ProductName; ?>" required></td>
+            <td>Product Name:</td>
+            <td><input type="text" name="ProductName" value="<?php echo htmlspecialchars($item->ProductName); ?>" size="10" minlength="5" maxlength="100" required></td>
         </tr>
         <tr>
-            <td>Description</td>
-            <td><input type="text" name="ProductDescription" value="<?php echo $item->ProductDescription; ?>" required></td>
+            <td>Product Description:</td>
+            <td><input type="text" name="ProductDescription" value="<?php echo htmlspecialchars($item->ProductDescription); ?>" size="10" minlength="50" maxlength="1000" required></td>
         </tr>
         <tr>
-            <td>Model</td>
-            <td><input type="text" name="Model" value="<?php echo $item->Model; ?>" required></td>
+            <td>Model:</td>
+            <td><input type="text" name="Model" value="<?php echo htmlspecialchars($item->Model); ?>" size="10" minlength="4" maxlength="50" required></td>
         </tr>
         <tr>
-            <td>Size</td>
-            <td><input type="text" name="Size" value="<?php echo $item->Size; ?>" required></td>
+            <td>Size:</td>
+            <td><input type="text" name="Size" value="<?php echo htmlspecialchars($item->Size); ?>" size="10" minlength="1" maxlength="40" required></td>
         </tr>
         <tr>
-            <td>Color</td>
-            <td><input type="text" name="Color" value="<?php echo $item->Color; ?>" required></td>
+            <td>Color:</td>
+            <td><input type="text" name="Color" value="<?php echo htmlspecialchars($item->Color); ?>" size="10" minlength="4" maxlength="50" required></td>
         </tr>
         <tr>
-            <td>Category ID</td>
-            <td><input type="text" name="CategoryID" value="<?php echo $item->CategoryID; ?>" required></td>
+            <td>Category ID:</td>
+            <td><input type="number" name="CategoryID" value="<?php echo htmlspecialchars($item->CategoryID); ?>" size="10" min="1" max="50" required></td>
         </tr>
         <tr>
-            <td>Wholesale Price</td>
-            <td><input type="text" name="WholesalePrice" value="<?php echo $item->WholesalePrice; ?>" required></td>
+            <td>Wholesale Price:</td>
+            <td><input type="number" name="WholesalePrice" value="<?php echo htmlspecialchars($item->WholesalePrice); ?>" size="10" min="1" max="5000" required></td>
         </tr>
         <tr>
-            <td>List Price</td>
-            <td><input type="text" name="ListPrice" value="<?php echo $item->ListPrice; ?>" required></td>
+            <td>List Price:</td>
+            <td><input type="number" name="ListPrice" value="<?php echo htmlspecialchars($item->ListPrice); ?>" size="10" min="1" max="6000" required></td>
         </tr>
     </table>
     <input type="submit" name="answer" value="Update Product">
     <input type="submit" name="answer" value="Cancel">
-    <input type="hidden" name="ProductID" value="<?php echo $ProductID; ?>">
+    <input type="hidden" name="ProductID" value="<?php echo htmlspecialchars($ProductID); ?>">
     <input type="hidden" name="content" value="changeOutdoorproduct">
-</form>        <?php
+</form>
+        <?php
     } else {
         ?>
-        <h2>Sorry, product <?php echo $ProductID; ?> not found</h2>
+        <h2>Sorry, product <?php echo htmlspecialchars($ProductID); ?> not found</h2>
         <a href="index.php?content=listOutdoorproduct">List items</a>
         <?php
     }

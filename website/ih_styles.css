@@ -1,0 +1,128 @@
+/*
+
+*/
+
+body {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 80%;
+    background-color: #f4f4f4;
+    color: #41334a;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+
+ }
+ h1 {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 120%;
+    color: #41334a;
+    margin: 0px;
+    padding: 0px;
+
+ }
+ 
+ 
+ h2 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 120%;
+    color: #41334a;
+    margin: 0px;
+    padding: 0px;
+ }
+ h3 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 110%;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+ }
+ h4 {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    color: #41334a;
+    margin: 0px;
+    padding: 0px;
+ }
+ 
+ 
+ footer {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 80%;
+    clear: both;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 5px;
+    border-bottom: 3px solid #f4f4f4;
+    border-top: 3px solid #f4f4f4;
+    width: 100%;
+   }
+   
+
+ header {
+    padding: 5px;
+    border-bottom: 3px solid #1a1a1a;
+    height: 40px;
+    width: 100%;
+    background-color: #1a1a1a;
+    
+ }
+ 
+ nav {
+    padding: 5px;
+    border-bottom: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    border-top: 1px solid #f4f4f4;
+    border-left: 5px solid #f4f4f4;
+    color: #f0e6d5;
+    background-color: #2c2c2c;
+    width: 20%;
+ }
+
+
+ 
+ a, a:link {
+    color: #b37d4e;
+   }
+   a:active {
+    color: #6e5849;
+   }
+   
+   nav a, nav a:link {
+    color: #ffe9cc;
+    text-decoration: none;
+   }
+   nav a:visited {
+    color: #c9b6d3;
+   }
+   nav a:hover {
+    color: #ead4ca;
+   }
+   nav a:active {
+    color: #6e5849;
+   }
+
+   input {
+    border: 2px solid #6e5849;
+    background-color: white;
+    color: #2e2e2e;
+    border-radius: 5px;
+   }
+   input[type=submit] {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 80%;
+   }
+   input:required:invalid {
+    border-color: #872c14;
+    background-color: #fbd79c;
+   }
+   input:required:valid {
+    border-color: #c9b6d3;
+    background-color: #f9f7f3;
+   }
+   input:focus {
+    outline: none;
+    border-color: hsl(210, 100%, 90%);
+    background-color: hsl(210, 100%, 90%);
+    box-shadow: 0 0 5px hsl(210, 100%, 90%);
+   }

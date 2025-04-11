@@ -10,19 +10,19 @@ dg224@njit.edu
    <table cellpadding="1" border="0">
        <tr>
           <td>Category ID:</td>
-          <td><input type="number" name="CategoryID" size="4" min="1" max="999" required></td>
+          <td><input type="number" name="CategoryID" size="10" min="1" max="100" required></td>
        </tr>
        <tr>
          <td>Category Code:</td>
-        <td><input type="text" name="CategoryCode" size="20" placeholder="XX" minlength="2" required></td>
+        <td><input type="text" name="CategoryCode" size="5" placeholder="XX" minlength="2" maxlength = "40" required></td> 
        </tr>
        <tr>
            <td>Category Name:</td>
-           <td><input type="text" name="CategoryName" size="50" required></td>
+           <td><input type="text" name="CategoryName" size="10" minlength = "4" maxlength = "200" required></td>
        </tr>
        <tr>
            <td>Aisle Number:</td>
-           <td><input type="number" name="AisleNumber" size="50" required></td>
+           <td><input type="number" name="AisleNumber" size="10" min="1" max="11" required></td>
        </tr>
    </table><br>
    <input type="submit" value="Submit New Category">

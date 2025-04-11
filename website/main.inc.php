@@ -10,7 +10,7 @@ if (!isset($_SESSION['login'])) {
   <h2>Please Login to the Outdoor Clothing Shop Inventory Website</h2><br>
   <form name="login" action="index.php" method="post">
     <label>Email:</label>
-    <input type="text" name="emailAddress" size="20">
+    <input type="email" name="emailAddress" size="20">
     <br>
     <br>
     <label>Password:</label>

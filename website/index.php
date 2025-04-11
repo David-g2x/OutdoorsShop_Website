@@ -12,7 +12,11 @@ include("OutdoorClothingProduct.php");
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Outdoor Clothing Shop Inventory Helper</title></head>
+<head>
+    <title>Outdoor Clothing Shop Inventory Helper</title>
+    <link rel="stylesheet" type="text/css" href="ih_styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
 <body>
 <header>
        <?php include("header.inc.php"); ?>

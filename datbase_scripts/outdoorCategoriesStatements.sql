@@ -17,3 +17,5 @@ CREATE TABLE OutdoorClothingCategories (
 
 
 SELECT * FROM OutdoorClothingCategories;
+
+DELETE FROM `OutdoorClothingCategories` where `CategoryID` = 8

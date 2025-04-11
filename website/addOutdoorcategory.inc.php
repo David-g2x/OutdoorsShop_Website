@@ -8,14 +8,14 @@ dg224@njit.edu
 //include("OutdoorClothingCategory.php");
 
 if (isset($_SESSION['login'])) {
-    $categoryID = trim($_POST['CategoryID']);
+    $categoryID = filter_input(INPUT_POST, 'CategoryID', FILTER_VALIDATE_INT); //trim($_POST['CategoryID']);
 
     if (empty($categoryID) || !is_numeric($categoryID)) {
         echo "<h2>Sorry, you must enter a valid category ID number</h2>\n";
     } else {
-        $categoryCode = trim($_POST['CategoryCode']);
-        $categoryName = trim($_POST['CategoryName']);
-        $aisleNumber = trim($_POST['AisleNumber']);
+        $categoryCode = htmlspecialchars(trim($_POST['CategoryCode']));
+        $categoryName = htmlspecialchars(trim($_POST['CategoryName']));
+        $aisleNumber = htmlspecialchars(trim($_POST['AisleNumber']));
 
         if (empty($categoryCode) || empty($categoryName) || !is_numeric($aisleNumber)) {
             echo "<h2>Sorry, you must enter valid data for all fields</h2>\n";

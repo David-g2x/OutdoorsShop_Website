@@ -6,9 +6,10 @@ IT-202-002 Phase 1 Assignment: Login and Logout
 dg224@njit.edu
 */
 require_once('database.php');
-$emailAddress = $_POST['emailAddress'];
+$emailAddress = htmlspecialchars($_POST['emailAddress']);
 $password = $_POST['password'];
 
+if(filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
 $query = "SELECT firstName, lastName, pronouns FROM outdoorGearManagers " .
         "WHERE emailAddress = ? AND password = SHA2(?,256)";
 $db = getDB();
@@ -22,7 +23,7 @@ $stmt->close();
 $name = "$firstName $lastName";
 
 if ($fetched) {
-   echo "<h2>Welcome $name$pronouns to Outdoor Clothing Shop Inventory Helper</h2>\n";
+   echo "<h2>Welcome $name ($pronouns) to Outdoor Clothing Shop Inventory Helper</h2>\n";
    session_start();
    $_SESSION['login'] = $name;
    $_SESSION['pronouns'] = $pronouns;
@@ -32,4 +33,9 @@ if ($fetched) {
    echo "<h2>Sorry Outdoor Clothing Shop, login incorrect</h2>\n";
    echo "<a href=\"index.php\">Please try again</a>\n";
 }
+}else{
+   echo "<h2>Please enter a valid email address</h2>\n";
+   echo "<a href=\"index.php\">Please try again</a>\n";
+}
+
 ?>

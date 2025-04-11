@@ -24,4 +24,4 @@ CREATE TABLE OutdoorClothingProducts (
 Select * from OutdoorClothingProducts;
 
 
-DELETE FROM `OutdoorClothingProducts` where `ProductID`= 0
+DELETE FROM `OutdoorClothingProducts` where `ProductID`= 20
