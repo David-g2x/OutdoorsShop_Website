@@ -1,7 +1,7 @@
 <h2>Select Category</h2>
 
 <form name="categories" method="post">
-    <select name="categoryID" size="20">
+    <select name="CategoryID" size="20"> 
         <?php
         /*
         David Guemes Giles
