@@ -5,6 +5,15 @@ David Guemes Giles
 Phase 3 Assignment: HTML Website Layout
 dg224@njit.edu
 */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+echo "<pre>DEBUG POST:\n";
+print_r($_POST);
+echo "</pre>";
+//debuging
+
 if (!isset($_POST['ProductID']) || !is_numeric($_POST['ProductID'])) {
     ?>
     <h2>You did not select a valid ProductID value</h2>
