@@ -109,7 +109,8 @@ class OutdoorClothingCategory
             throw new Exception("Error: Database connection failed.");
         }
 
-        $query = "SELECT * FROM OutdoorClothingCategories WHERE CategoryID = ?";
+        $query = "SELECT CategoryID, CategoryCode, CategoryName, AisleNumber, DateCreated 
+                FROM OutdoorClothingCategories WHERE CategoryID = ?";
         $stmt = $db->prepare($query);
         if (!$stmt) {
             throw new Exception("Error preparing statement: " . $db->error);
@@ -117,24 +118,20 @@ class OutdoorClothingCategory
 
         $stmt->bind_param("i", $CategoryID);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_array(MYSQLI_ASSOC);
+
+        $stmt->bind_result($catID, $catCode, $catName, $aisle, $dateCreated);
+        if ($stmt->fetch()) {
+            $category = new OutdoorClothingCategory($catID, $catCode, $catName, $aisle, $dateCreated);
+        } else {
+            $category = null;
+        }
 
         $stmt->close();
         $db->close();
 
-        if ($row) {
-            return new OutdoorClothingCategory(
-                $row['CategoryID'],
-                $row['CategoryCode'],
-                $row['CategoryName'],
-                $row['AisleNumber'],
-                $row['DateCreated']
-            );
-        } else {
-            return null;
-        }
+        return $category;
     }
+
 
     function updateCategory()
     {
