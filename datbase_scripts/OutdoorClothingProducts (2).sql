@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Mar 28, 2025 at 10:33 PM
+-- Generation Time: Apr 12, 2025 at 03:39 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `OutdoorClothingProducts` (
 --
 
 INSERT INTO `OutdoorClothingProducts` (`ProductID`, `ProductCode`, `ProductName`, `ProductDescription`, `Model`, `Size`, `Color`, `CategoryID`, `WholesalePrice`, `ListPrice`, `DateCreated`) VALUES
-(1, 'WJ101', 'Nike Storm-FIT Jacket', 'Created with water and wind-resistant technology. Has reflective details and has a loose fit to it.', 'Storm-FIT', 'XL', 'Black', 1, 90.00, 150.00, '2025-03-28 10:10:57'),
+(1, 'WJ101', 'Supreme x Nike Jacket', 'Created with water and wind-resistant technology. Has reflective details and has a loose fit to it.', 'Storm-FIT', 'M', 'Black', 1, 100.00, 250.00, '2025-03-28 10:10:57'),
 (2, 'WJ102', 'Adidas Terrex Multi 2L RAIN.RDY Jacket', 'Waterproof and windproof outdoor jacket with Adidas RAIN.RDY technology. It is designed for all-weather.', 'Terrex Multi 2L RAIN.RDY', 'L', 'Magic Grey', 1, 70.00, 100.00, '2025-03-15 19:01:32'),
 (3, 'WJ103', 'The North Face Apex Bionic 3 Hoodie', 'Premium waterproof jacket with groundbreaking breathable technology. It is perfect for all-weather outdoor.', 'Apex Bionic 3', 'L', 'TNF Black', 1, 200.00, 350.00, '2025-03-15 19:01:47'),
 (4, 'HBS201', 'Timberland Mt. Maddsen Mid Waterproof Hiking Boots', 'Has waterproof protection for the hikes. AS well as anti-fatigue technology for long-distance hikes.', 'Mt. Maddsen Mid WP', '10', 'Black', 2, 50.00, 99.99, '2025-03-15 19:12:00'),
@@ -60,7 +60,8 @@ INSERT INTO `OutdoorClothingProducts` (`ProductID`, `ProductCode`, `ProductName`
 (13, 'FHD501', 'The North Face Gordon Lyons Fleece Hoodie', 'A premium fleece-lined hoodie. It is perfect for cold-weather adventures.', 'Gordon Lyons Fleece Hoodie', 'L', 'Black Heather', 5, 55.00, 84.00, '2025-03-15 19:37:15'),
 (14, 'FHD502', 'Columbia Hart Mountain II Fleece Hoodie', 'Soft cotton-blend hoodie with fleece lining. Perfect for the outdoors or for casual wear.', 'Hart Mountain II Fleece Hoodie', 'M', 'River Blue', 5, 25.00, 55.00, '2025-03-15 19:37:17'),
 (15, 'FHD503', 'Adidas Essentials Fleece-Lined Hoodie', 'A classic Adidas hoodie with fleece lining. Is designed to provide user with added warmth.', 'Essentials Fleece-Lined Hoodie', 'XS', 'Black', 5, 45.00, 60.00, '2025-03-15 19:37:20'),
-(16, 'BN101', 'Supreme Timberland Beanie', 'A collaboration with supreme and Timberland. Part of the Fall/Winter 2021 Collection.', 'FW21', 'Fits All', 'Blue', 6, 45.00, 79.00, '2025-03-28 14:40:48');
+(16, 'BN101', 'Supreme Timberland Beanie', 'A collaboration with supreme and Timberland. Part of the Fall/Winter 2021 Collection.', 'FW21', 'Fits All', 'Blue', 6, 45.00, 79.00, '2025-03-28 14:40:48'),
+(20, 'TST101', 'FakeProduct', 'Fake Description long enough to test if my code works', 'Fake-FIT', 'XL', 'Black', 8, 70.00, 100.00, '2025-04-11 10:53:42');
 
 --
 -- Indexes for dumped tables
