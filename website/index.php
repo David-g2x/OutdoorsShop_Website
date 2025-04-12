@@ -29,10 +29,18 @@ include("OutdoorClothingProduct.php");
        <main>
            <?php
            if (isset($_REQUEST['content'])) {
-               include($_REQUEST['content'] . ".inc.php");
-           } else {
-               include("main.inc.php");
-           }
+            $file = basename($_REQUEST['content']) . ".inc.php";
+            $fullPath = __DIR__ . '/' . $file;
+        
+            // Check if file exists (case-sensitive) and is in the same directory
+            if (file_exists($fullPath)) {
+                include($file);
+            } else {
+                include("main.inc.php");
+            }
+        } else {
+            include("main.inc.php");
+        }        
            ?>
        </main>
    </section>
