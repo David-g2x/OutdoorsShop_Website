@@ -152,30 +152,26 @@ class OutdoorClothingProduct
     static function findProduct($ProductID)
     {
         $db = getDB();
-        $query = "SELECT * FROM OutdoorClothingProducts WHERE ProductID = ?";
+        $query = "SELECT ProductID, ProductCode, ProductName, ProductDescription, Model, Size, Color, CategoryID, WholesalePrice, ListPrice 
+                FROM OutdoorClothingProducts WHERE ProductID = ?";
         $stmt = $db->prepare($query);
         $stmt->bind_param("i", $ProductID);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_array(MYSQLI_ASSOC);
+
+        // Bind the result variables
+        $stmt->bind_result($pid, $code, $name, $desc, $model, $size, $color, $catid, $wholesale, $list);
+
+        // Fetch the row
+        if ($stmt->fetch()) {
+            $product = new OutdoorClothingProduct($pid, $code, $name, $desc, $model, $size, $color, $catid, $wholesale, $list);
+        } else {
+            $product = NULL;
+        }
+
         $stmt->close();
         $db->close();
-        if ($row) {
-            return new OutdoorClothingProduct(
-                $row['ProductID'],
-                $row['ProductCode'],
-                $row['ProductName'],
-                $row['ProductDescription'],
-                $row['Model'],
-                $row['Size'],
-                $row['Color'],
-                $row['CategoryID'],
-                $row['WholesalePrice'],
-                $row['ListPrice']
-            );
-        } else {
-            return NULL;
-        }
+
+        return $product;
     }
 
     function removeProduct()
