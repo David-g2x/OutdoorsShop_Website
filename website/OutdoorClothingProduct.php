@@ -189,36 +189,45 @@ class OutdoorClothingProduct
     static function getProductsByCategory($CategoryID)
     {
         $db = getDB();
-        $query = "SELECT * FROM OutdoorClothingProducts WHERE CategoryID = ?";
+        if (!$db) {
+            throw new Exception("Error: Database connection failed.");
+        }
+
+        $query = "SELECT ProductID, ProductCode, ProductName, ProductDescription, 
+                        Model, Size, Color, CategoryID, WholesalePrice, ListPrice 
+                FROM OutdoorClothingProducts WHERE CategoryID = ?";
+        
         $stmt = $db->prepare($query);
+        if (!$stmt) {
+            throw new Exception("Error preparing statement: " . $db->error);
+        }
+
         $stmt->bind_param("i", $CategoryID);
         $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            $products = array();
-            while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                $product = new OutdoorClothingProduct(
-                    $row['ProductID'],
-                    $row['ProductCode'],
-                    $row['ProductName'],
-                    $row['ProductDescription'],
-                    $row['Model'],
-                    $row['Size'],
-                    $row['Color'],
-                    $row['CategoryID'],
-                    $row['WholesalePrice'],
-                    $row['ListPrice']
-                );
-                array_push($products, $product);
-            }
-            $stmt->close();
-            $db->close();
-            return $products;
-        } else {
-            $stmt->close();
-            $db->close();
-            return NULL;
+        $stmt->bind_result($ProductID, $ProductCode, $ProductName, $ProductDescription,
+                        $Model, $Size, $Color, $CategoryID, $WholesalePrice, $ListPrice);
+
+        $products = [];
+        while ($stmt->fetch()) {
+            $products[] = new OutdoorClothingProduct(
+                $ProductID,
+                $ProductCode,
+                $ProductName,
+                $ProductDescription,
+                $Model,
+                $Size,
+                $Color,
+                $CategoryID,
+                $WholesalePrice,
+                $ListPrice
+            );
         }
+
+        $stmt->close();
+        $db->close();
+
+        return !empty($products) ? $products : null;
     }
+
 }
 ?>
