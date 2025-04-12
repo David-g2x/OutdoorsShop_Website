@@ -73,19 +73,19 @@
        </tr>
        <tr>
            <td>
-               <form action="index.php?content=updateOutdoorproduct" method="post"> <!--Maybe this the issue BEfore (changing from index.php)-->
+               <form action="index.php" method="post">
                    <label>Search for Product:</label><br>
-                   <input type="text" name="ProductID" size="14" />
+                   <input type="number" name="ProductID" size="14" min="1" required />
                    <input type="submit" value="find" />
                    <input type="hidden" name="content" value="updateOutdoorproduct" />
-                   </form>
+               </form>
            </td>
        </tr>
        <tr>
            <td>
-               <form action="index.php?content=displayOutdoorcategory" method="post"> <!--Maybe this the issue-->
+               <form action="index.php" method="post">
                    <label>Search for Category:</label><br>
-                   <input type="text" name="CategoryID" size="14" />
+                   <input type="number" name="CategoryID" size="14" min="1" required />
                    <input type="submit" value="find" />
                    <input type="hidden" name="content" value="displayOutdoorcategory" />
                </form>
