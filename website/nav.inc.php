@@ -23,7 +23,7 @@
        </tr>
    <?php
    } else {
-    echo "<td><h3 class='gold-welcome'>Welcome, {$_SESSION['login']}</h3></td>\n";  //change tp gpld
+    echo "<td><h3 class='gold-welcome'>Welcome, {$_SESSION['login']}</h3></td>\n";
    ?>
        <tr>
            <td> <img src="images/home.png" alt="Home Icon" width="12" height="12">&nbsp;

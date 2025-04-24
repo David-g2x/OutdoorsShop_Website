@@ -5,7 +5,9 @@ David Guemes Giles
 IT-202-002 Phase 2 Assignment: CRUD Categories and Products
 dg224@njit.edu
 */
-include("OutdoorClothingProduct.php");
+//include("OutdoorClothingProduct.php");
+error_log("\$_POST " . print_r($_POST, true));
+require_once("OutdoorClothingProduct.php");
 $ProductID = $_POST['ProductID'];
 $product = OutdoorClothingProduct::findProduct($ProductID);
 $result = $product ? $product->removeProduct() : false;

@@ -6,7 +6,7 @@ IT-202-002 Phase 2 Assignment: CRUD Categories and Products
 dg224@njit.edu
 */
 error_log("\$_POST " . print_r($_POST, true));
-include("OutdoorClothingCategory.php");
+require_once("OutdoorClothingCategory.php");
 $categoryID = $_POST['CategoryID'];
 $category = OutdoorClothingCategory::findCategory($categoryID);
 if (!$category) { 

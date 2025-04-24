@@ -74,3 +74,7 @@ if (!isset($_POST['ProductID']) || !is_numeric($_POST['ProductID'])) {
     }
 }
 ?>
+<script language="javascript">
+   document.category.productCode.focus();
+   document.category.productCode.select();
+</script>

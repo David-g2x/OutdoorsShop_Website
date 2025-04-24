@@ -228,6 +228,43 @@ class OutdoorClothingProduct
 
         return !empty($products) ? $products : null;
     }
+    static function getTotalItems()
+    {
+        $db = getDB();
+        $query = "SELECT COUNT(ProductID) FROM OutdoorClothingProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+static function getTotalListPrice()
+    {
+        $db = getDB();
+        $query = "SELECT SUM(ListPrice) FROM OutdoorClothingProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+
+    static function getWholesalePrice()
+    {
+        $db = getDB();
+        $query = "SELECT SUM(WholesalePrice) FROM OutdoorClothingProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
 
 }
 ?>

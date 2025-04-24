@@ -43,7 +43,7 @@ if (!isset($_REQUEST['CategoryID']) or (!is_numeric($_REQUEST['CategoryID']))) {
      </table>
    <?php
    } else {
-     echo "<h2>There are no items for this category</h2>\n";
+     echo "<h2>There are no products for this category</h2>\n";
    }
  } else {
     echo "<h2>Sorry, category $categoryID not found</h2>\n";

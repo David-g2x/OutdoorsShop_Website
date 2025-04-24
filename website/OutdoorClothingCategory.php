@@ -187,5 +187,18 @@ class OutdoorClothingCategory
         $db->close();
         return true;
     }
+
+    static function getTotalCategories()
+    {
+        $db = getDB();
+        $query = "SELECT COUNT(CategoryID) FROM OutdoorClothingCategories";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
 }
 ?>
