@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Apr 12, 2025 at 03:39 AM
+-- Generation Time: Apr 24, 2025 at 11:58 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -60,8 +60,7 @@ INSERT INTO `OutdoorClothingProducts` (`ProductID`, `ProductCode`, `ProductName`
 (13, 'FHD501', 'The North Face Gordon Lyons Fleece Hoodie', 'A premium fleece-lined hoodie. It is perfect for cold-weather adventures.', 'Gordon Lyons Fleece Hoodie', 'L', 'Black Heather', 5, 55.00, 84.00, '2025-03-15 19:37:15'),
 (14, 'FHD502', 'Columbia Hart Mountain II Fleece Hoodie', 'Soft cotton-blend hoodie with fleece lining. Perfect for the outdoors or for casual wear.', 'Hart Mountain II Fleece Hoodie', 'M', 'River Blue', 5, 25.00, 55.00, '2025-03-15 19:37:17'),
 (15, 'FHD503', 'Adidas Essentials Fleece-Lined Hoodie', 'A classic Adidas hoodie with fleece lining. Is designed to provide user with added warmth.', 'Essentials Fleece-Lined Hoodie', 'XS', 'Black', 5, 45.00, 60.00, '2025-03-15 19:37:20'),
-(16, 'BN101', 'Supreme Timberland Beanie', 'A collaboration with supreme and Timberland. Part of the Fall/Winter 2021 Collection.', 'FW21', 'Fits All', 'Blue', 6, 45.00, 79.00, '2025-03-28 14:40:48'),
-(20, 'TST101', 'FakeProduct', 'Fake Description long enough to test if my code works', 'Fake-FIT', 'XL', 'Black', 8, 70.00, 100.00, '2025-04-11 10:53:42');
+(16, 'BN101', 'Supreme Timberland Beanie', 'A collaboration with supreme and Timberland. Part of the Fall/Winter 2021 Collection.', 'FW21', 'Fits All', 'Blue', 6, 20.00, 79.00, '2025-03-28 14:40:48');
 
 --
 -- Indexes for dumped tables

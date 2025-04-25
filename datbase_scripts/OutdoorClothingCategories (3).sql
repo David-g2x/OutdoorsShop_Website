@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Apr 12, 2025 at 03:37 AM
+-- Generation Time: Apr 24, 2025 at 11:57 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -44,8 +44,8 @@ INSERT INTO `OutdoorClothingCategories` (`CategoryID`, `CategoryCode`, `Category
 (3, 'UVPH', 'UV Protection Hat', 3, '2025-03-15 18:41:48'),
 (4, 'IGS', 'Insulated Gloves', 4, '2025-03-15 18:41:49'),
 (5, 'FHD', 'Fleece-lined Hoodie', 5, '2025-03-15 18:41:51'),
-(6, 'BN', 'Beanie', 6, '2025-03-28 18:32:50'),
-(8, 'TST', 'Phase4', 8, '2025-04-11 14:42:18');
+(6, 'BN', 'Beanie', 6, '2025-04-24 18:35:26'),
+(8, 'PLZ', 'NEW', 8, '2025-04-24 18:40:09');
 
 --
 -- Indexes for dumped tables
